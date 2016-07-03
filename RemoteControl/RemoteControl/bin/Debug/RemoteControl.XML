@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RemoteControl</name>
+    </assembly>
+    <members>
+        <member name="T:RemoteControl.MyConstellation">
+            <summary>
+            Represents your Constellation
+            </summary>
+        </member>
+        <member name="T:RemoteControl.MyConstellation.Sentinels">
+            <summary>
+            Specifies the sentinels in your Constellation
+            </summary>
+        </member>
+        <member name="F:RemoteControl.MyConstellation.Sentinels.PC_EMERIC">
+            <summary>
+            Sentinel 'PC-EMERIC'
+            </summary>
+        </member>
+        <member name="T:RemoteControl.MyConstellation.PackageInstances">
+            <summary>
+            Specifies the package's instances in your Constellation
+            </summary>
+        </member>
+        <member name="F:RemoteControl.MyConstellation.PackageInstances.PC_EMERIC_Pushbullet">
+            <summary>
+            Package 'Pushbullet' on 'PC-EMERIC'
+            </summary>
+        </member>
+        <member name="T:RemoteControl.MyConstellation.Packages">
+            <summary>
+            Specifies the packages in your Constellation
+            </summary>
+        </member>
+        <member name="F:RemoteControl.MyConstellation.Packages.Pushbullet">
+            <summary>
+            Package 'Pushbullet'
+            </summary>
+        </member>
+        <member name="M:RemoteControl.MyConstellation.CreateScope(RemoteControl.MyConstellation.Sentinels)">
+            <summary>
+            Creates the message scope to the specified sentinel.
+            </summary>
+            <param name="sentinel">The sentinel.</param>
+            <returns>MessageScope</returns>
+        </member>
+        <member name="M:RemoteControl.MyConstellation.CreateScope(RemoteControl.MyConstellation.PackageInstances)">
+            <summary>
+            Creates the message scope to the specified package's instance.
+            </summary>
+            <param name="package">The package's instance.</param>
+            <returns>MessageScope</returns>
+        </member>
+        <member name="M:RemoteControl.MyConstellation.CreateScope(RemoteControl.MyConstellation.Packages)">
+            <summary>
+            Creates the message scope to the specified package.
+            </summary>
+            <param name="package">The package.</param>
+            <returns>MessageScope</returns>
+        </member>
+        <member name="T:RemoteControl.RealNameAttribute">
+            <summary>
+            Specifies the real name of an enum value.
+            </summary>
+            <seealso cref="T:System.Attribute" />
+        </member>
+        <member name="P:RemoteControl.RealNameAttribute.RealName">
+            <summary>
+            Gets or sets the real name.
+            </summary>
+            <value>
+            The real name.
+            </value>
+        </member>
+        <member name="M:RemoteControl.RealNameAttribute.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RemoteControl.RealNameAttribute"/> class.
+            </summary>
+            <param name="realname">The real name.</param>
+        </member>
+        <member name="M:RemoteControl.RealNameAttribute.GetRealName``1(``0)">
+            <summary>
+            Gets the real name of an enum value.
+            </summary>
+            <typeparam name="TEnum">The type of the enum.</typeparam>
+            <param name="value">The enum value.</param>
+            <returns>The real name.</returns>
+        </member>
+        <member name="T:RemoteControl.RealNameExtension">
+            <summary>
+            Provides extension methods to get the real name of a Sentinel, Package or PackageInstance.
+            </summary>
+        </member>
+        <member name="T:RemoteControl.PushBullet.MessageCallbacks.SendPushRequest">
+            <summary>
+            Type 'SendPushRequest'
+            </summary>
+        </member>
+        <member name="P:RemoteControl.PushBullet.MessageCallbacks.SendPushRequest.Iden">
+            <summary>
+            The Iden.
+            </summary>
+        </member>
+        <member name="P:RemoteControl.PushBullet.MessageCallbacks.SendPushRequest.Title">
+            <summary>
+            The Title.
+            </summary>
+        </member>
+        <member name="P:RemoteControl.PushBullet.MessageCallbacks.SendPushRequest.Message">
+            <summary>
+            The Message.
+            </summary>
+        </member>
+        <member name="T:RemoteControl.PushBullet.MessageCallbacks.PushBulletExtensions">
+            <summary>
+            Provides extension methods for the MessageScope to PushBullet
+            </summary>
+        </member>
+        <member name="M:RemoteControl.PushBullet.MessageCallbacks.PushBulletExtensions.ToPushBulletScope(Constellation.MessageScope)">
+            <summary>
+            Create a PushBulletScope
+            </summary>
+            <param name="scope">The Constellation MessageScope</param>
+        </member>
+        <member name="M:RemoteControl.PushBullet.MessageCallbacks.PushBulletExtensions.CreatePushBulletScope(RemoteControl.MyConstellation.Sentinels)">
+            <summary>
+            Create a PushBulletScope to all packages of the specified sentinel
+            </summary>
+            <param name="sentinel">The sentinel</param>
+        </member>
+        <member name="M:RemoteControl.PushBullet.MessageCallbacks.PushBulletExtensions.CreatePushBulletScope(RemoteControl.MyConstellation.PackageInstances)">
+            <summary>
+            Create a PushBulletScope to a specific package
+            </summary>
+            <param name="package">The package</param>
+        </member>
+        <member name="M:RemoteControl.PushBullet.MessageCallbacks.PushBulletExtensions.CreatePushBulletScope(RemoteControl.MyConstellation.Packages)">
+            <summary>
+            Create a PushBulletScope to a specific package
+            </summary>
+            <param name="package">The package</param>
+        </member>
+        <member name="T:RemoteControl.PushBullet.MessageCallbacks.PushBulletScope">
+            <summary>
+            Represent a message scope to PushBullet
+            </summary>
+        </member>
+        <member name="F:RemoteControl.PushBullet.MessageCallbacks.PushBulletScope.currentScope">
+            <summary>
+            The current scope
+            </summary>
+        </member>
+        <member name="M:RemoteControl.PushBullet.MessageCallbacks.PushBulletScope.#ctor(Constellation.MessageScope)">
+            <summary>
+            Initializes a new instance of the <see cref="T:RemoteControl.PushBullet.MessageCallbacks.PushBulletScope"/> class.
+            </summary>
+            <param name="scope">The scope.</param>
+        </member>
+        <member name="M:RemoteControl.PushBullet.MessageCallbacks.PushBulletScope.SendPush(RemoteControl.PushBullet.MessageCallbacks.SendPushRequest)">
+            <summary>
+            Send message 'SendPush' to the current scope
+            </summary>
+            <param name="request">The 'request' parameter</param>
+        </member>
+        <member name="M:RemoteControl.Program.SetBrightness(System.Byte)">
+            <summary>
+            Sets the brightness.
+            </summary>
+            <param name="targetBrightness">The target brightness.</param>
+        </member>
+        <member name="M:RemoteControl.Program.PushBrightness">
+            <summary>
+            Pushes the brightness.
+            </summary>
+        </member>
+        <member name="M:RemoteControl.Program.SetVolume(System.Int32)">
+            <summary>
+            Sets the volume.
+            </summary>
+            <param name="valeur">Value.</param>
+        </member>
+        <member name="M:RemoteControl.Program.SetPowerPlan(System.String)">
+            <summary>
+            Sets the power plan.
+            </summary>
+            <param name="plan">Plan.</param>
+        </member>
+        <member name="M:RemoteControl.Program.SetVolume(System.String)">
+            <summary>
+            Sets the volume.
+            </summary>
+            <param name="level">Level.</param>
+        </member>
+        <member name="M:RemoteControl.Program.PanicMode">
+            <summary>
+            Launch the panic mode.
+            </summary>
+        </member>
+        <member name="M:RemoteControl.Program.MonitorOff">
+            <summary>
+            Turn off the monitor.
+            </summary>
+        </member>
+        <member name="M:RemoteControl.Program.Shutdown">
+            <summary>
+            Shutdowns this instance.
+            </summary>
+        </member>
+        <member name="M:RemoteControl.Program.Reboot">
+            <summary>
+            Reboots this instance.
+            </summary>
+        </member>
+        <member name="M:RemoteControl.Program.Sleep">
+            <summary>
+            Sleeps this instance.
+            </summary>
+        </member>
+        <member name="M:RemoteControl.Program.AnswerQuestion(System.String)">
+            <summary>
+            Answers the question.
+            </summary>
+            <param name="reponse">Reponse.</param>
+        </member>
+        <member name="M:RemoteControl.Program.OpenBrowser(System.String)">
+            <summary>
+            Opens the browser.
+            </summary>
+            <param name="url">URL.</param>
+        </member>
+        <member name="M:RemoteControl.Program.OpenMediaPlayer">
+            <summary>
+            Opens the media player.
+            </summary>
+        </member>
+        <member name="M:RemoteControl.Program.CloseMediaPlayer">
+            <summary>
+            Closes the media player.
+            </summary>
+        </member>
+        <member name="M:RemoteControl.Program.TaskCreator(System.String,System.String,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Create a Windows task which opens a notepad to remind your created task at the right moment.
+            </summary>
+            <param name="title">Title.</param>
+            <param name="description">The message you want to see.</param>
+            <param name="jour">Day.</param>
+            <param name="mois">Month.</param>
+            <param name="annee">Year.</param>
+            <param name="heure">Hour.</param>
+            <param name="minute">Minute.</param>
+        </member>
+        <member name="T:RemoteControl.Properties.Resources">
+            <summary>
+              Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
+            </summary>
+        </member>
+        <member name="P:RemoteControl.Properties.Resources.ResourceManager">
+            <summary>
+              Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
+            </summary>
+        </member>
+        <member name="P:RemoteControl.Properties.Resources.Culture">
+            <summary>
+              Remplace la propriété CurrentUICulture du thread actuel pour toutes
+              les recherches de ressources à l'aide de cette classe de ressource fortement typée.
+            </summary>
+        </member>
+        <member name="P:RemoteControl.Properties.Resources.nircmd">
+            <summary>
+              Recherche une ressource localisée de type System.Byte[].
+            </summary>
+        </member>
+    </members>
+</doc>
